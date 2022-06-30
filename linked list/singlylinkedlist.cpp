@@ -46,7 +46,7 @@ class SinglyLinkedList{
 
     }
 }
-int mian()
+int main()
 {
     return 0;
 }
