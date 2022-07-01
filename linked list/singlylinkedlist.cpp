@@ -52,7 +52,6 @@ class SinglyLinkedList{
         return temp;
     }
 
-
     //2. append a node to the list
 
     void appendNode(Node *n)
@@ -82,6 +81,61 @@ class SinglyLinkedList{
     }
 
     //3. prepend Node - Attach a node at the start
+    void prependNode(Node *n)
+    {
+        if(nodeExist(n->key)!=NULL)
+        {
+            cout<<"\nNode already exists of key value : "<<n->key<<" use different key value"<<endl;
+        }
+        else
+        {
+            n->next=head;
+            head=n;
+        }
+    }
+
+    //4. Insert a node between two nodes
+    void insertNodeAfter(int k,Node *n)
+    {
+       Node* ptr = nodeExist(k);
+       if(ptr==NULL)
+       {
+        cout<<"no node exist with key value"<<k<<endl;
+       } 
+       else
+       {
+        if(nodeExist(n->key)!=NULL)
+        {
+            cout<<"\nNode already exists of key value : "<<n->key<<" use different key value"<<endl;
+        }
+        else
+        {
+            n->next=ptr->next;
+            ptr->next=n;
+        }
+       }
+    }
+
+    //5. delete a node by key
+    void deleteNodeByKey(int k)
+    {
+        if(head==NULL)
+        {
+            cout<<"Linked List already empty. cant delete"<<endl;
+        }
+        else if(head!= NULL)
+        {
+            if(head->key==k)
+            {
+                head=head->next;
+                cout<<"Node UNlinked with key value "<<k<<endl;
+            }
+            else
+            {
+                //42:54 paused
+            }
+        }
+    }
 };
 int main()
 {
